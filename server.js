@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const notes = require('./db/db.json')
+const fs = require('fs');
 
 // Sets up the Express App
 
@@ -13,14 +14,23 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Routes
+function readNotes() {
+    console.log("hi!")
+    var noteData = fs.readFileSync(path.join(__dirname, './db/db.json'));
+    var parsedNoteData = JSON.parse(noteData);
+        return parsedNoteData;
+   // return fs.readFileSync('./db/db.json', "utf8");
+}
 
 // Basic route that sends the user first to the AJAX Page
 app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, 'public/notes.html')));
-
+app.get('/api/notes', (req, res) => {
+    console.log("is running?")
+    res.json(readNotes())
+})
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public/index.html')));
 
-// // Displays all characters
-// app.get('/api/characters', (req, res) => res.json(characters));
+
 
 // // Displays a single character, or returns false
 // app.get('/api/characters/:character', (req, res) => {
