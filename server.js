@@ -18,7 +18,6 @@ function readNotes() {
     var noteData = fs.readFileSync(path.join(__dirname, './db/db.json'));
     var parsedNoteData = JSON.parse(noteData);
         return parsedNoteData;
-   // return fs.readFileSync('./db/db.json', "utf8");
 }
 
 // Basic route that sends the user first to the AJAX Page
@@ -29,6 +28,11 @@ app.get('/api/notes', (req, res) => {
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public/index.html')));
 
 
+// Routes to post user input to page
+app.post("/api/notes", (req, res) => {
+    req.body.id = Math.floor(Math.random() * 100000000);
+    let newNote = req.body;
+}
 
 // // Displays a single character, or returns false
 // app.get('/api/characters/:character', (req, res) => {
