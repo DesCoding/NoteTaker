@@ -13,14 +13,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// Routes
+// Stores notes in an array
 function readNotes() {
     var noteData = fs.readFileSync(path.join(__dirname, './db/db.json'));
     var parsedNoteData = JSON.parse(noteData);
         return parsedNoteData;
 }
 
-// Basic route that sends the user first to the AJAX Page
+// Route that sends the user first to the AJAX Page
 app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, 'public/notes.html')));
 app.get('/api/notes', (req, res) => {
     res.json(readNotes())
@@ -28,11 +28,14 @@ app.get('/api/notes', (req, res) => {
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public/index.html')));
 
 
-// Routes to post user input to page
+// Generates unique id
 app.post("/api/notes", (req, res) => {
     req.body.id = Math.floor(Math.random() * 100000000);
     let newNote = req.body;
 })
+
+// Returns saved notes as an array of objects
+const savedNotes = JSON.parse(fs.readFileS)
 
 // Starts the server to begin listening
 
