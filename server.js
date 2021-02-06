@@ -15,7 +15,6 @@ app.use(express.static("public"));
 
 // Routes
 function readNotes() {
-    console.log("hi!")
     var noteData = fs.readFileSync(path.join(__dirname, './db/db.json'));
     var parsedNoteData = JSON.parse(noteData);
         return parsedNoteData;
@@ -25,7 +24,6 @@ function readNotes() {
 // Basic route that sends the user first to the AJAX Page
 app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, 'public/notes.html')));
 app.get('/api/notes', (req, res) => {
-    console.log("is running?")
     res.json(readNotes())
 })
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public/index.html')));
