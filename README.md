@@ -5,7 +5,6 @@ NoteTaker allows users to write, save, and delete notes. This application will u
 # Technologies Used
 
   * NodeJS
-  * Inquirer
   * html
   * CSS
   * JavaScript
