@@ -21,7 +21,7 @@ Heroku Link -
 
 # Demo
 
-![Demo](NoteTakerDemo.gif)
+![Demo](public/assets/NoteTakerDemo.gif)
 
 # MIT License
 
