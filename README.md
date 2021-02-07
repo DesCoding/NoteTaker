@@ -17,12 +17,11 @@ NoteTaker allows users to write, save, and delete notes. This application will u
 
 GitHub Repo - https://github.com/DesCoding/NoteTaker
 
-* The URL of the deployed application. This should be the link to the url provided by Heroku. Be sure not to submit a link to the Heroku dashboard.
+Heroku Link - 
+
 # Demo
 
-![Demo](insertdemogifhere.gif)
-
-![Demo](insertdemohere.png)
+![Demo](NoteTakerDemo.gif)
 
 # MIT License
 
