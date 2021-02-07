@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 const notes = require("./db/db.json");
 const fs = require("fs");
-const { dirname } = require("path");
 
 // Sets up the Express App
 
