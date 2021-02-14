@@ -14,9 +14,9 @@ NoteTaker allows users to write, save, and delete notes. This application will u
 
 # Deployment
 
-GitHub Repo - https://github.com/DesCoding/NoteTaker
+[GitHub Repo](https://github.com/DesCoding/NoteTaker)
 
-Heroku Link - https://glacial-retreat-63902.herokuapp.com/
+[Heroku Link](https://glacial-retreat-63902.herokuapp.com/)
 
 # Demo
 
